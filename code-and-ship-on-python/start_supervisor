@@ -1,0 +1,4 @@
+rm /home/websson/startup/supervisor.sock
+rm /home/websson/startup/supervisord.pid
+/home/websson/mamba/bin/supervisord -c /home/websson/startup/supervisord.conf
+echo "STARTED SUPERVISOR"

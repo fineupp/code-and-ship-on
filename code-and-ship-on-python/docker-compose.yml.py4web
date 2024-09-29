@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  python-on-websson:
+    image: fineupp/code-and-ship-on-python:latest
+    environment:
+      PY4WEB: 'True'
+      PY4WEB_PASS: admin
+      VSTOKEN: py4web
+      JUPTOKEN: juptoken
+      ENVNAME: py4web-on-websson
+      SSHKEY: 'True'
+      SUPERVISOR: 'True'
+#     KEYTOKEN: ey.... 
+#     KEYURL: https://...
+      VSVERSION: 1.93.0
+      USERPASS: py4web
+#     DEDTERMINAL: "{\"port\": 9000, \"username\": \"py4web\", \"password\": \"py4web\"}"
+    ports:
+#     - "11434:11434"
+      - "8000:80"
+      - "2022:22"
+      - "3000:3000"
+      - "3001:3001"
+#     - "9000:9000"
+    volumes:
+      - py4web-on-websson-home:/home/websson
+
+volumes:
+  py4web-on-websson-home:

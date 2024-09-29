@@ -1,0 +1,2 @@
+[program:supervisor_test_program]
+command=/home/websson/mamba/bin/python /home/websson/startup/test.py

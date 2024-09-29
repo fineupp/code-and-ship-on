@@ -1,0 +1,15 @@
+{
+ "argv": [
+  "/home/websson/jupyterlab_alone_venv/bin/python",
+  "-Xfrozen_modules=off",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "websson-default",
+ "language": "python",
+ "metadata": {
+  "debugger": true
+ }
+}

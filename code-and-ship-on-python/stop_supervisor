@@ -1,0 +1,4 @@
+ps -ef | grep supervisord | grep -v grep | awk '{print $2}' | xargs kill
+rm /home/websson/startup/supervisor.sock
+rm /home/websson/startup/supervisord.pid
+echo "STOPPED SUPERVISOR"

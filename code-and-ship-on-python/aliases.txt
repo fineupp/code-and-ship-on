@@ -1,0 +1,11 @@
+alias pip="uv pip"
+alias venv="uv venv"
+
+python() {
+    if [[ $@ == "-m venv" ]]; then
+        command uv venv
+    else
+        command python $@
+    fi
+}
+alias virtualenv="uv venv"
