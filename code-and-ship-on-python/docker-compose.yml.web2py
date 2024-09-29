@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  python-on-websson:
+    image: fineupp/code-and-ship-on-python:latest
+    environment:
+      WEB2PY: 'True'
+      WEB2PY_PASS: admin
+      VSTOKEN: web2py
+      JUPTOKEN: juptoken
+      ENVNAME: web2py-on-websson
+      SSHKEY: 'True'
+      SUPERVISOR: 'True'
+#     KEYTOKEN: ey.... 
+#     KEYURL: https://...
+      VSVERSION: 1.93.0
+      USERPASS: web2py
+#     DEDTERMINAL: "{\"port\": 9000, \"username\": \"web2py\", \"password\": \"web2py\"}"
+    ports:
+#     - "11434:11434"
+      - "8000:80"
+      - "2022:22"
+      - "3000:3000"
+      - "3001:3001"
+#     - "9000:9000"
+    volumes:
+      - web2py-on-websson-home:/home/websson
+
+volumes:
+  webp2y-on-websson-home:
