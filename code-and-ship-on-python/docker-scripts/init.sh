@@ -222,7 +222,6 @@ else
 		touch /home/websson/.ssh.done
 	else
 		echo "NOT GENERATING KEY"
-		touch /home/websson/.ssh.done
 	fi
 fi
 
