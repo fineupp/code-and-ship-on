@@ -71,8 +71,7 @@ ADD startup /home/websson/startup
 ADD installers /home/updates/installers
 RUN  ln -s /home/updates/installers /home/websson/installers
 
-ADD nginx /home/updates/nginx
-RUN  ln -s /home/updates/nginx /home/websson/nginx
+ADD nginx /home/websson/nginx
 
 RUN git clone https://github.com/excid3/asdf.git ~/.asdf
 RUN echo '. "$HOME/.asdf/asdf.sh"' >> ~/.bashrc
