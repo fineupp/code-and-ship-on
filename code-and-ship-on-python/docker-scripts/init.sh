@@ -30,15 +30,31 @@ else
 fi
 
 
+if [[ ! -z "$ENCODEDSERVICEFILE"  ]] && [[ "$CUSTOM" ==  False ]] ; then
+        /docker-scripts/custom.sh
+fi
+
+if [[ ! -z "$GITURL"  ]] && [[ "$CUSTOM" ==  False ]] ; then
+        /docker-scripts/custom.sh
+fi
+
+if [[ ! -z "$SERVICEURL"  ]] && [[ "$CUSTOM" ==  False ]] ; then
+        /docker-scripts/custom.sh
+fi
+
+if [[ ! -z "$SECRETSURL"  ]] && [[ "$CUSTOM" ==  False ]] ; then
+        /docker-scripts/custom.sh
+fi
 
 # OVERWRITING FRAMEWORK START SEQUENCE WITH CUSTOM SCRIPT IF SET
 FILE=/home/websson/startup/startme.sh
 if test -f "$FILE"; then
     echo "$FILE exists."
      export CUSTOM=True
-    . /home/websson/startup/startme.sh &
+    . /home/websson/startup/startme.sh 
 
 fi
+sudo /docker-scripts/disable_variables
 
 
 
@@ -188,6 +204,9 @@ elif [[ -z "$JUPTOKEN" ]]; then
     echo "JUPTOKEN is set to the empty string"
 elif [[ "$JUPTOKEN" ==  juptoken ]]; then
     echo "JUPTOKEN is set to default"
+elif [[ "$JUPTOKEN" ==  notoken ]]; then
+    echo "JUPTOKEN is set to notoken"
+        export JUPTOKEN= && /home/websson/launchers/jupyterlab/jupyterlab.sh &
 else
 	. /home/websson/launchers/jupyterlab/jupyterlab.sh &
 fi

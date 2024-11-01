@@ -117,7 +117,7 @@ COPY stop_supervisor /usr/sbin/stop_supervisor
 COPY start_supervisor /usr/sbin/start_supervisor
 COPY proxychains4.conf /etc/proxychains4.conf
 
-RUN  echo "websson ALL = NOPASSWD: /usr/sbin/websson_update_user_pass,/usr/sbin/sshd -D,/usr/sbin/websson_user_reset,/etc/init.d/nginx stop" >> /etc/sudoers
+RUN  echo "websson ALL = NOPASSWD: /usr/sbin/websson_update_user_pass,/usr/sbin/sshd -D,/usr/sbin/websson_user_reset,/etc/init.d/nginx stop,/docker-scripts/disable_variables,/usr/bin/wg-quick" >> /etc/sudoers
 RUN chown websson /home/websson/log  -R && \
     chown websson /home/websson/startup -R && \ 
 #    chown websson /home/websson/wireguard -R && \ 
