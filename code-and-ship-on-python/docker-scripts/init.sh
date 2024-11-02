@@ -29,22 +29,27 @@ else
 	echo "SUPERVISOR OFF BECAUSE OF ENV VAR"
 fi
 
-
 if [[ ! -z "$ENCODEDSERVICEFILE"  ]] && [[ "$CUSTOM" ==  False ]] ; then
         /docker-scripts/custom.sh
+        export CUSTOM=True
 fi
 
 if [[ ! -z "$GITURL"  ]] && [[ "$CUSTOM" ==  False ]] ; then
         /docker-scripts/custom.sh
+        export CUSTOM=True
 fi
+
 
 if [[ ! -z "$SERVICEURL"  ]] && [[ "$CUSTOM" ==  False ]] ; then
         /docker-scripts/custom.sh
+        export CUSTOM=True
 fi
 
 if [[ ! -z "$SECRETSURL"  ]] && [[ "$CUSTOM" ==  False ]] ; then
         /docker-scripts/custom.sh
+        export CUSTOM=True
 fi
+
 
 # OVERWRITING FRAMEWORK START SEQUENCE WITH CUSTOM SCRIPT IF SET
 FILE=/home/websson/startup/startme.sh
