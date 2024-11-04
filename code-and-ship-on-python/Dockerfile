@@ -124,7 +124,7 @@ RUN chown websson /home/websson/log  -R && \
     chown websson  /home/websson/.keys -R 
 
 #IF YOU WANT TO RUN AN AI MODEL IN THE CONTAINER
-#RUN curl -fsSL https://ollama.com/install.sh | sh
+RUN curl -fsSL https://ollama.com/install.sh | sh
 
 RUN mkdir /var/run/sshd && \
     chmod 0755 /var/run/sshd

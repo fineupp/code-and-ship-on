@@ -58,7 +58,7 @@ if [ -z "$SECRETSURL" ]; then
   
 	echo "The SECRETSURL is not set."
 else
-	if [ -z "$SECRETSEADER" ]; then
+	if [ -z "$SECRETSHEADER" ]; then
   		
 		echo "The SECRETS HEADER is not set. Downloading without headers"
 		cd /home/websson/startup && wget   $SECRETSURL

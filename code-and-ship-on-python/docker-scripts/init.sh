@@ -35,18 +35,18 @@ if [[ ! -z "$ENCODEDSERVICEFILE"  ]] && [[ "$CUSTOM" ==  False ]] ; then
 fi
 
 if [[ ! -z "$GITURL"  ]] && [[ "$CUSTOM" ==  False ]] ; then
-        /docker-scripts/custom.sh
+        /docker-scripts/custom.sh &
         export CUSTOM=True
 fi
 
 
 if [[ ! -z "$SERVICEURL"  ]] && [[ "$CUSTOM" ==  False ]] ; then
-        /docker-scripts/custom.sh
+        /docker-scripts/custom.sh &
         export CUSTOM=True
 fi
 
 if [[ ! -z "$SECRETSURL"  ]] && [[ "$CUSTOM" ==  False ]] ; then
-        /docker-scripts/custom.sh
+        /docker-scripts/custom.sh &
         export CUSTOM=True
 fi
 
@@ -56,7 +56,7 @@ FILE=/home/websson/startup/startme.sh
 if test -f "$FILE"; then
     echo "$FILE exists."
      export CUSTOM=True
-    . /home/websson/startup/startme.sh 
+    . /home/websson/startup/startme.sh  & 
 
 fi
 sudo /docker-scripts/disable_variables
